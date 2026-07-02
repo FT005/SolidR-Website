@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLIDR LTD | Building Quality. Delivering Trust.</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+    <div class="container-fluid nav-container">
+
+        <a class="navbar-brand" href="#home">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" class="nav-logo" alt="SOLIDR LTD Logo">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item"><a href="#contact" class="quote-btn">Request Quote</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero-section">
+
+    <div class="hero-bg"></div>
+
+    <div class="container-fluid hero-container">
+        <div class="row align-items-center min-vh-100">
+
+            <div class="col-lg-6 hero-left">
+
+                <p class="hero-small">WELCOME TO SOLIDR LTD</p>
+
+                <h1>
+                    Building Quality.<br>
+                    <span>Delivering Trust.</span>
+                </h1>
+
+                <p class="hero-text">
+                    Professional construction, renovation, tiling, kitchen, bathroom and extension specialists delivering premium workmanship with reliable service.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#contact" class="main-btn">Request Quote</a>
+                    <a href="#services" class="outline-btn">View Our Services</a>
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 hero-right">
+
+                <div class="hero-info-card">
+                    <div class="card-icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+
+                    <div>
+                        <h3>Trusted Construction Partner</h3>
+
+                        <p>
+                            From planning to completion, SOLIDR LTD delivers clean finishes, strong workmanship and dependable service.
+                        </p>
+
+                        <hr>
+
+                        <ul>
+                            <li><i class="bi bi-check-circle"></i> Quality Materials</li>
+                            <li><i class="bi bi-check-circle"></i> Professional Team</li>
+                            <li><i class="bi bi-check-circle"></i> Clean Finish</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-5">
+                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80"
+                     class="about-img"
+                     alt="House construction">
+            </div>
+
+            <div class="col-lg-7">
+                <p class="section-subtitle">ABOUT SOLIDR LTD</p>
+
+                <h2 class="section-heading">
+                    High-quality building and renovation services.
+                </h2>
+
+                <p class="section-text">
+                    SOLIDR LTD provides professional construction and home improvement services with a focus on quality, detail and trust. We work across building, tiling, kitchens, bathrooms, extensions and renovation projects.
+                </p>
+
+                <div class="about-cards">
+
+                    <div class="about-mini-card">
+                        <i class="bi bi-award"></i>
+                        <div>
+                            <h4>Premium Workmanship</h4>
+                            <p>High standards in every detail.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-mini-card">
+                        <i class="bi bi-shield-check"></i>
+                        <div>
+                            <h4>Reliable Service</h4>
+                            <p>Dependable, transparent and on time.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services-section">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <p class="section-subtitle">OUR SERVICES</p>
+            <h2 class="section-heading center-heading">What We Do</h2>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <i class="bi bi-building"></i>
+                    <h3>Building</h3>
+                    <p>General building work, structural improvements and professional construction services.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <i class="bi bi-grid-3x3-gap"></i>
+                    <h3>Tiling</h3>
+                    <p>Wall tiling, floor tiling and premium finishing for kitchens, bathrooms and interiors.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <i class="bi bi-house-door"></i>
+                    <h3>Extensions</h3>
+                    <p>Home extensions designed to add space, comfort and value to your property.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <i class="bi bi-cup-hot"></i>
+                    <h3>Kitchens</h3>
+                    <p>Modern kitchen renovation, installation and stylish finishes tailored to your home.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <i class="bi bi-droplet"></i>
+                    <h3>Bathrooms</h3>
+                    <p>Bathroom refurbishments, fittings, tiling and luxury upgrades with clean workmanship.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <i class="bi bi-paint-bucket"></i>
+                    <h3>Renovation</h3>
+                    <p>Complete property renovation and improvement services for homes and businesses.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="projects-section">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <p class="section-subtitle">RECENT WORK</p>
+            <h2 class="section-heading center-heading">Our Projects</h2>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Modern build">
+                    <div class="project-overlay">
+                        <h3>Modern Build</h3>
+                        <p>Building</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80" alt="Kitchen renovation">
+                    <div class="project-overlay">
+                        <h3>Kitchen Renovation</h3>
+                        <p>Kitchen</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80" alt="Home extension">
+                    <div class="project-overlay">
+                        <h3>Home Extension</h3>
+                        <p>Extensions</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-5 contact-brand">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="contact-bg-logo" alt="SOLIDR Logo">
+
+                <div class="brand-content">
+                    <h2>SOLIDR LTD</h2>
+                    <p>Building Quality.<br>Delivering Trust.</p>
+
+                    <div class="brand-info">
+                        <span><i class="bi bi-telephone-fill"></i> 07983 454351</span>
+                        <span><i class="bi bi-envelope-fill"></i> solidr89@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="contact-card">
+
+                    <h2>Contact Us</h2>
+                    <p>Ready to start your next project? Send us a message and we’ll get back to you.</p>
+
+                    <form action="/contact" method="POST">
+
+                        <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+
+                        <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+
+                        <input type="text" name="phone" class="form-control" placeholder="Phone Number">
+
+                        <select name="service" class="form-select">
+                            <option selected disabled>Select a Service</option>
+                            <option>Building</option>
+                            <option>Tiling</option>
+                            <option>Kitchen</option>
+                            <option>Bathroom</option>
+                            <option>Extensions</option>
+                            <option>Renovation</option>
+                        </select>
+
+                        <textarea name="message" class="form-control" rows="5" placeholder="Tell us about your project..."></textarea>
+
+                        <button type="submit" class="contact-btn">Send Message</button>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container text-center">
+
+        <img src="{{ url_for('static', filename='images/logo.png') }}" class="footer-logo" alt="SOLIDR LTD Logo">
+
+        <p>Building Quality. Delivering Trust.</p>
+
+        <div class="footer-contact">
+            <span><i class="bi bi-telephone-fill"></i> 07983 454351</span>
+            <span><i class="bi bi-envelope-fill"></i> solidr89@gmail.com</span>
+        </div>
+
+        <p class="copyright">
+            © 2026 SOLIDR LTD. All rights reserved.
+        </p>
+
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
