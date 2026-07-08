@@ -1,7 +1,8 @@
+import os
 from flask import Flask, render_template, request, flash, redirect
 
 app = Flask(__name__)
-app.secret_key = "solidr_secret"
+app.secret_key = os.environ.get("SECRET_KEY", "solidr_secret")
 
 @app.route("/")
 def home():
@@ -10,7 +11,6 @@ def home():
 
 @app.route("/contact", methods=["POST"])
 def contact():
-
     name = request.form.get("name")
     email = request.form.get("email")
     phone = request.form.get("phone")
@@ -30,4 +30,4 @@ def contact():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False, host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
