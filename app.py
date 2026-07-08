@@ -1,7 +1,7 @@
 import os
 from flask import Flask, render_template, request, flash, redirect
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="Static", static_url_path="/static")
 app.secret_key = os.environ.get("SECRET_KEY", "solidr_secret")
 
 @app.route("/")
