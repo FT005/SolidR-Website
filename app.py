@@ -5,8 +5,6 @@ from email.utils import parseaddr
 import requests
 from flask import Flask, flash, redirect, render_template, request
 
-RESEND_API_URL = "https://api.resend.com/emails"
-
 
 app = Flask(
     __name__,
@@ -38,22 +36,31 @@ def send_enquiry_email(
     service: str,
     customer_message: str,
 ) -> None:
-    """Send the website enquiry to the SOLIDR inbox via the Resend API.
+    """Send the website enquiry to the SOLIDR inbox via the Mailgun API.
 
     Render blocks outbound SMTP (ports 25/465/587) on all plans, so this
     goes over HTTPS instead of smtplib.
     """
 
-    resend_api_key = os.environ.get("RESEND_API_KEY")
-    sender_email = os.environ.get("RESEND_FROM_EMAIL", "onboarding@resend.dev")
+    mailgun_api_key = os.environ.get("MAILGUN_API_KEY")
+    mailgun_domain = os.environ.get("MAILGUN_DOMAIN")
+    # Use https://api.eu.mailgun.net if the Mailgun domain is on the EU region.
+    mailgun_api_base_url = os.environ.get(
+        "MAILGUN_API_BASE_URL",
+        "https://api.mailgun.net",
+    )
+    sender_email = os.environ.get(
+        "MAILGUN_FROM_EMAIL",
+        f"SOLIDR Website <mailgun@{mailgun_domain}>",
+    )
     recipient_email = os.environ.get(
         "RECIPIENT_EMAIL",
         "solidr89@gmail.com",
     )
 
-    if not resend_api_key:
+    if not mailgun_api_key or not mailgun_domain:
         raise RuntimeError(
-            "RESEND_API_KEY has not been configured."
+            "Mailgun environment variables have not been configured."
         )
 
     text_body = f"""
@@ -74,13 +81,13 @@ You can reply directly to this email to contact the customer.
 """.strip()
 
     response = requests.post(
-        RESEND_API_URL,
-        headers={"Authorization": f"Bearer {resend_api_key}"},
-        json={
+        f"{mailgun_api_base_url}/v3/{mailgun_domain}/messages",
+        auth=("api", mailgun_api_key),
+        data={
             "from": sender_email,
             "to": [recipient_email],
             # When the client clicks Reply, it will reply to the customer.
-            "reply_to": customer_email,
+            "h:Reply-To": customer_email,
             "subject": f"New SOLIDR enquiry: {service}",
             "text": text_body,
         },
@@ -89,7 +96,7 @@ You can reply directly to this email to contact the customer.
 
     if not response.ok:
         raise RuntimeError(
-            f"Resend API error {response.status_code}: {response.text}"
+            f"Mailgun API error {response.status_code}: {response.text}"
         )
 
 
