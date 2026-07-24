@@ -1,6 +1,11 @@
 import logging
 import os
-from flask import Flask, render_template, request, flash, redirect
+import smtplib
+from email.message import EmailMessage
+from email.utils import parseaddr
+
+from flask import Flask, flash, redirect, render_template, request
+
 
 app = Flask(
     __name__,
@@ -90,22 +95,57 @@ def home():
 
 @app.route("/contact", methods=["POST"])
 def contact():
-    name = request.form.get("name")
-    email = request.form.get("email")
-    phone = request.form.get("phone")
-    service = request.form.get("service")
-    message = request.form.get("message")
+    name = request.form.get("name", "").strip()
+    customer_email = request.form.get("email", "").strip()
+    phone = request.form.get("phone", "").strip()
+    service = request.form.get("service", "").strip()
+    customer_message = request.form.get("message", "").strip()
 
-    print("New Enquiry")
-    print(name)
-    print(email)
-    print(phone)
-    print(service)
-    print(message)
+    # Basic validation
+    if not name:
+        flash("Please enter your name.", "error")
+        return redirect("/#contact")
 
-    flash("Thank you! Your enquiry has been sent successfully.")
+    if not is_valid_email(customer_email):
+        flash("Please enter a valid email address.", "error")
+        return redirect("/#contact")
 
-    return redirect("/")
+    if not service:
+        flash("Please select a service.", "error")
+        return redirect("/#contact")
+
+    if not customer_message:
+        flash("Please enter a message.", "error")
+        return redirect("/#contact")
+
+    try:
+        send_enquiry_email(
+            name=name,
+            customer_email=customer_email,
+            phone=phone,
+            service=service,
+            customer_message=customer_message,
+        )
+
+        flash(
+            "Thank you! Your enquiry has been sent successfully.",
+            "success",
+        )
+
+    except Exception as error:
+        # This appears in Render logs but does not expose credentials.
+        app.logger.exception(
+            "Failed to send contact-form email: %s",
+            error,
+        )
+
+        flash(
+            "Sorry, your message could not be sent. "
+            "Please call us on 020 8087 1955.",
+            "error",
+        )
+
+    return redirect("/#contact")
 
 
 if __name__ == "__main__":
