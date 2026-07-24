@@ -1,10 +1,11 @@
 import logging
 import os
-import smtplib
-from email.message import EmailMessage
 from email.utils import parseaddr
 
+import requests
 from flask import Flask, flash, redirect, render_template, request
+
+RESEND_API_URL = "https://api.resend.com/emails"
 
 
 app = Flask(
@@ -37,31 +38,25 @@ def send_enquiry_email(
     service: str,
     customer_message: str,
 ) -> None:
-    """Send the website enquiry to the SOLIDR Gmail inbox."""
+    """Send the website enquiry to the SOLIDR inbox via the Resend API.
 
-    email_user = os.environ.get("EMAIL_USER")
-    email_app_password = os.environ.get("EMAIL_APP_PASSWORD")
+    Render blocks outbound SMTP (ports 25/465/587) on all plans, so this
+    goes over HTTPS instead of smtplib.
+    """
+
+    resend_api_key = os.environ.get("RESEND_API_KEY")
+    sender_email = os.environ.get("RESEND_FROM_EMAIL", "onboarding@resend.dev")
     recipient_email = os.environ.get(
         "RECIPIENT_EMAIL",
         "solidr89@gmail.com",
     )
 
-    if not email_user or not email_app_password:
+    if not resend_api_key:
         raise RuntimeError(
-            "Email environment variables have not been configured."
+            "RESEND_API_KEY has not been configured."
         )
 
-    message = EmailMessage()
-
-    message["Subject"] = f"New SOLIDR enquiry: {service}"
-    message["From"] = email_user
-    message["To"] = recipient_email
-
-    # When the client clicks Reply, it will reply to the customer.
-    message["Reply-To"] = customer_email
-
-    message.set_content(
-        f"""
+    text_body = f"""
 New customer enquiry received through the SOLIDR website.
 
 CUSTOMER DETAILS
@@ -77,15 +72,21 @@ MESSAGE
 
 You can reply directly to this email to contact the customer.
 """.strip()
-    )
 
-    with smtplib.SMTP_SSL(
-        "smtp.gmail.com",
-        465,
+    response = requests.post(
+        RESEND_API_URL,
+        headers={"Authorization": f"Bearer {resend_api_key}"},
+        json={
+            "from": sender_email,
+            "to": [recipient_email],
+            # When the client clicks Reply, it will reply to the customer.
+            "reply_to": customer_email,
+            "subject": f"New SOLIDR enquiry: {service}",
+            "text": text_body,
+        },
         timeout=20,
-    ) as smtp:
-        smtp.login(email_user, email_app_password)
-        smtp.send_message(message)
+    )
+    response.raise_for_status()
 
 
 @app.route("/")
