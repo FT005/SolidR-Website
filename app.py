@@ -86,7 +86,11 @@ You can reply directly to this email to contact the customer.
         },
         timeout=20,
     )
-    response.raise_for_status()
+
+    if not response.ok:
+        raise RuntimeError(
+            f"Resend API error {response.status_code}: {response.text}"
+        )
 
 
 @app.route("/")
