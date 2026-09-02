@@ -55,7 +55,7 @@ def send_enquiry_email(
     )
     recipient_email = os.environ.get(
         "RECIPIENT_EMAIL",
-        "solidr89@gmail.com",
+        "Admin@SolidR.co.uk",
     )
 
     if not mailgun_api_key or not mailgun_domain:
