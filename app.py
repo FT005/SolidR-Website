@@ -1,4 +1,3 @@
-import logging
 import os
 from email.utils import parseaddr
 
@@ -98,6 +97,12 @@ You can reply directly to this email to contact the customer.
         raise RuntimeError(
             f"Mailgun API error {response.status_code}: {response.text}"
         )
+
+    app.logger.info(
+        "Mailgun accepted enquiry email for %s: %s",
+        recipient_email,
+        response.text,
+    )
 
 
 @app.route("/")
