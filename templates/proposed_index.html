@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROPOSED LAYOUT | SolidR</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/proposed-style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+    <div class="container-fluid nav-container">
+        <a class="navbar-brand" href="#home">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" class="nav-logo" alt="SOLIDR LTD Logo">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item"><a href="#contact" class="quote-btn">Request Quote</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section id="home" class="hero-section">
+    <div class="hero-bg"></div>
+
+    <div class="container hero-container">
+        <div class="row align-items-center min-vh-100">
+            <div class="col-lg-7 hero-left">
+                <p class="hero-small">Building Quality. Delivering Trust.</p>
+
+                <h1>
+                    PROPERTY REFURBISHMENT<br>
+                    <span>&amp; RENOVATION SPECIALISTS</span>
+                </h1>
+
+                <p class="hero-description">
+                    From kitchens and bathrooms to extensions, plumbing, electrics and gas — we take care of your entire property project from start to finish.
+                </p>
+
+                <p class="hero-supporting-text">Serving homeowners, landlords &amp; property investors.</p>
+
+                <div class="hero-buttons">
+                    <a href="#contact" class="main-btn">GET A FREE QUOTE</a>
+                    <a href="#projects" class="outline-btn">VIEW OUR PROJECTS</a>
+                </div>
+            </div>
+
+            <div class="col-lg-5 hero-right">
+                <div class="hero-info-card">
+                    <div class="card-icon">
+                        <i class="bi bi-house-heart"></i>
+                    </div>
+
+                    <div>
+                        <h3>Complete Refurbishment Management</h3>
+                        <p>
+                            SolidR can manage your complete property refurbishment from start to finish, with quality workmanship, trusted trades and a clean, professional finish.
+                        </p>
+
+                        <ul>
+                            <li><i class="bi bi-check-circle"></i> Kitchens &amp; bathrooms</li>
+                            <li><i class="bi bi-check-circle"></i> Extensions &amp; structural work</li>
+                            <li><i class="bi bi-check-circle"></i> Plumbing, gas &amp; electrics</li>
+                        </ul>
+
+                        <a href="#contact" class="card-link">Book a free consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="trust-strip">
+    <div class="container">
+        <div class="trust-grid">
+            <div><strong>Full Service</strong><span>From design to completion</span></div>
+            <div><strong>Trusted Team</strong><span>Skilled, reliable tradespeople</span></div>
+            <div><strong>Clear Pricing</strong><span>No hidden surprises</span></div>
+            <div><strong>Request a Quote</strong><span><a href="#contact">Start your project</a></span></div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80" class="about-img" alt="Property refurbishment project">
+            </div>
+
+            <div class="col-lg-7">
+                <p class="section-subtitle">WHY SOLIDR</p>
+                <h2 class="section-heading">SolidR can manage your complete property refurbishment from start to finish.</h2>
+                <p class="section-text">
+                    We focus on the work that defines our business: property refurbishment, kitchen and bathroom transformations, extensions, plumbing, gas, electrics and quality finishes that improve the value and comfort of your home.
+                </p>
+
+                <div class="about-cards">
+                    <div class="about-mini-card">
+                        <i class="bi bi-award"></i>
+                        <div>
+                            <h4>Premium Results</h4>
+                            <p>High-quality workmanship and attention to detail across every stage.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-mini-card">
+                        <i class="bi bi-chat-square-text"></i>
+                        <div>
+                            <h4>Clear Communication</h4>
+                            <p>Simple updates, transparent planning and a process that keeps you informed.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-inline">
+                    <a href="#contact" class="main-btn">GET YOUR FREE QUOTE</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="services-section">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-subtitle">MAIN SERVICES</p>
+      <h2 class="section-heading">Property refurbishment and renovation specialists</h2>
+    </div>
+
+    <div class="service-grid">
+      <article class="service-card" style="background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80');">
+        <div class="service-badge"><i class="bi bi-house-door"></i></div>
+        <h3>Full Property Refurbishment</h3>
+        <p>Complete house and flat renovations.</p>
+      </article>
+
+      <article class="service-card" style="background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=900&q=80');">
+        <div class="service-badge"><i class="bi bi-bucket"></i></div>
+        <h3>Kitchen Renovations</h3>
+        <p>Supply, fitting and complete kitchen transformations.</p>
+      </article>
+
+      <article class="service-card" style="background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=900&q=80');">
+        <div class="service-badge"><i class="bi bi-droplet-half"></i></div>
+        <h3>Bathroom Renovations</h3>
+        <p>Bathrooms, toilets, tiling and plumbing.</p>
+      </article>
+
+      <article class="service-card" style="background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80');">
+        <div class="service-badge"><i class="bi bi-building"></i></div>
+        <h3>House Extensions</h3>
+        <p>Rear, side and other property extensions.</p>
+      </article>
+
+      <article class="service-card" style="background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80');">
+        <div class="service-badge"><i class="bi bi-fire"></i></div>
+        <h3>Plumbing &amp; Gas</h3>
+        <p>Installation, repairs and heating work.</p>
+      </article>
+
+      <article class="service-card" style="background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=900&q=80');">
+        <div class="service-badge"><i class="bi bi-lightbulb"></i></div>
+        <h3>Electrical Work</h3>
+        <p>Rewiring, lighting, sockets and electrical installations.</p>
+      </article>
+
+      <article class="service-card" style="background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80');">
+        <div class="service-badge"><i class="bi bi-grid-3x3-gap"></i></div>
+        <h3>Tiling, Flooring &amp; Carpentry</h3>
+        <p>Practical finishes and quality craftsmanship.</p>
+      </article>
+
+      <article class="service-card" style="background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80');">
+        <div class="service-badge"><i class="bi bi-paint-bucket"></i></div>
+        <h3>Painting &amp; Decorating</h3>
+        <p>Fresh interior and exterior finishes.</p>
+      </article>
+
+      <article class="service-card" style="background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80');">
+        <div class="service-badge"><i class="bi bi-archive"></i></div>
+        <h3>Shed Building &amp; Installation</h3>
+        <p>Outdoor storage and practical garden solutions.</p>
+      </article>
+    </div>
+
+    <div class="section-cta-row">
+      <a href="#contact" class="main-btn">GET A FREE QUOTE</a>
+    </div>
+  </div>
+</section>
+
+<section class="additional-services">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-subtitle">ADDITIONAL PROFESSIONAL SERVICES</p>
+      <h2 class="section-heading">Supporting services for our clients</h2>
+    </div>
+
+    <div class="additional-grid">
+      <div class="additional-item"><span>Fire Risk Assessments</span></div>
+      <div class="additional-item"><span>PAT Testing</span></div>
+      <div class="additional-item"><span>Domestic EPC Assessments</span></div>
+      <div class="additional-item"><span>Sound System Installation</span></div>
+      <div class="additional-item"><span>CCTV Installation</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="projects-section">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-subtitle">OUR WORK</p>
+      <h2 class="section-heading">Completed refurbishments, kitchens, bathrooms and extensions</h2>
+    </div>
+
+    <div class="projects-grid">
+      <article class="project-card">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Before and after kitchen renovation">
+        <div class="project-overlay">
+          <div class="project-labels"><span>Before</span><span>After</span></div>
+          <h3>Kitchen Transformation</h3>
+          <p>Full kitchen refurbishment and fitting</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Bathroom renovation before and after">
+        <div class="project-overlay">
+          <div class="project-labels"><span>Before</span><span>After</span></div>
+          <h3>Bathroom Upgrade</h3>
+          <p>Luxury bathroom renovation and tiling</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80" alt="Home extension project">
+        <div class="project-overlay">
+          <div class="project-labels"><span>Before</span><span>After</span></div>
+          <h3>House Extension</h3>
+          <p>Rear extension with modern open-plan living</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Property refurbishment project">
+        <div class="project-overlay">
+          <div class="project-labels"><span>Before</span><span>After</span></div>
+          <h3>Full Property Refresh</h3>
+          <p>Complete internal refurbishment and finish</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="section-cta-row">
+      <a href="#contact" class="outline-btn">BOOK A SITE VISIT</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5 contact-brand">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="contact-bg-logo" alt="SOLIDR Logo">
+
+                <div class="brand-content">
+                    <h2>SOLIDR LTD</h2>
+                    <p>Building Quality.<br>Delivering Trust.</p>
+
+                    <div class="brand-info">
+                        <span><i class="bi bi-telephone-fill"></i> 020 8087 1955</span>
+                        <span><i class="bi bi-envelope-fill"></i> Admin@SolidR.co.uk</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="contact-card">
+                    <h2>Request a quotation</h2>
+                    <p>Tell us about your refurbishment, extension, kitchen, bathroom or property project and we’ll get back to you.</p>
+
+                    <form action="/contact" method="POST">
+                        <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                        <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                        <input type="text" name="phone" class="form-control" placeholder="Phone Number">
+
+                        <select name="service" id="service" class="form-select" aria-label="Select a service" required>
+                            <option value="" selected disabled>Select a Service</option>
+                            <option value="Full Property Refurbishment">Full Property Refurbishment</option>
+                            <option value="Kitchen Renovations">Kitchen Renovations</option>
+                            <option value="Bathroom Renovations">Bathroom Renovations</option>
+                            <option value="House Extensions">House Extensions</option>
+                            <option value="Plumbing &amp; Gas">Plumbing &amp; Gas</option>
+                            <option value="Electrical Work">Electrical Work</option>
+                            <option value="Tiling, Flooring &amp; Carpentry">Tiling, Flooring &amp; Carpentry</option>
+                            <option value="Painting &amp; Decorating">Painting &amp; Decorating</option>
+                            <option value="Shed Building &amp; Installation">Shed Building &amp; Installation</option>
+                            <option value="Fire Risk Assessments">Fire Risk Assessments</option>
+                            <option value="PAT Testing">PAT Testing</option>
+                            <option value="Domestic EPC Assessments">Domestic EPC Assessments</option>
+                            <option value="Sound System Installation">Sound System Installation</option>
+                            <option value="CCTV Installation">CCTV Installation</option>
+                        </select>
+
+                        <textarea name="message" class="form-control" rows="5" placeholder="Tell us about your project..." required></textarea>
+
+                        <button type="submit" class="contact-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container text-center">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" class="footer-logo" alt="SOLIDR LTD Logo">
+        <p>Building Quality. Delivering Trust.</p>
+
+        <div class="footer-contact">
+            <span><i class="bi bi-telephone-fill"></i> 020 8087 1955</span>
+            <span><i class="bi bi-envelope-fill"></i> Admin@SolidR.co.uk</span>
+        </div>
+
+        <p class="copyright">© 2026 SOLIDR LTD. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

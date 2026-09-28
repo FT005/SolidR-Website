@@ -110,6 +110,11 @@ def home():
     return render_template("index.html")
 
 
+@app.route("/proposed_index")
+def proposed_index():
+    return render_template("proposed_index.html")
+
+
 @app.route("/contact", methods=["POST"])
 def contact():
     name = request.form.get("name", "").strip()
